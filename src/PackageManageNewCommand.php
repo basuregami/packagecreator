@@ -6,9 +6,9 @@
  * Time: 1:51 PM
  */
 
-namespace olivemediapackage\PackageManage;
+namespace basuregami\packagecreator;
 use Illuminate\Console\Command;
-use olivemediapackage\PackageManage\PackageManageHelper;
+use basuregami\packagecreator\PackageManageHelper;
 
 
 class PackageManageNewCommand extends Command
@@ -103,10 +103,10 @@ class PackageManageNewCommand extends Command
         //create the workspace for the package
         //download the skleton repo from the php league and cleanup and create workspace for package
         $this->info('Downloading skeleton And Creating Workspace for Package...');
-        $this->helper->download($zipFile = $this->helper->makeFilename(), 'http://github.com/thephpleague/skeleton/archive/master.zip')
+        $this->helper->download($zipFile = $this->helper->makeFilename(), 'https://codeload.github.com/basuregami/packagescaffold/zip/master')
             ->extract($zipFile, $defaultPath.$vendor)
             ->cleanUp($zipFile);
-        rename($defaultPath.$vendor.'/skeleton-master', $finalPath);
+        rename($defaultPath.$vendor.'/packagescaffold-master', $finalPath);
         $progress->advance();
 
 
@@ -124,7 +124,7 @@ class PackageManageNewCommand extends Command
 
         // Replacing skeleton placeholders
         $this->info('Replacing skeleton placeholders...');
-        $this->helper->replaceAndSaveFile($finalPath.'/src/SkeletonClass.php', 'namespace League\Skeleton;', 'namespace '.$vendor.'\\'.$name.';');
+        $this->helper->replaceAndSaveFile($finalPath.'/src/SkeletonClass.php', 'namespace packagescaffold\Skeleton;', 'namespace '.$vendor.'\\'.$name.';');
         $search =   [
             ':vendor',
             ':package_name',

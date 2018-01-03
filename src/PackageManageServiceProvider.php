@@ -6,14 +6,14 @@
  * Time: 3:12 PM
  */
 
-namespace olivemediapackage\PackageManage;
+namespace basuregami\packagecreator;
 
 use Illuminate\Support\ServiceProvider;
 
 class PackageManageServiceProvider extends ServiceProvider
 {
     protected $commands = [
-        'olivemediapackage\PackageManage\PackageManageNewCommand'
+        'basuregami\packagecreator\PackageManageNewCommand'
     ];
 
     /**

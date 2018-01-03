@@ -6,7 +6,7 @@
  * Time: 3:25 PM
  */
 
-namespace olivemediapackage\PackageManage;
+namespace basuregami\packagecreator;
 
 use ZipArchive;
 use RuntimeException;
