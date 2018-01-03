@@ -1,0 +1,25 @@
+{
+  "name": "basuregami/packagecreator",
+  "description": "Creates the boiler plate for package development",
+  "keywords": ["PackageManage", "laravel demo package"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Basu Regami",
+      "email": "basuregami@gmail.com"
+    }
+  ],
+  "require": {
+    "Illuminate/support": "~5",
+    "Illuminate/console": "~5",
+    "Illuminate/filesystem": "~5",
+    "guzzlehttp/guzzle": "~6"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "basuregami\\packagecreator\\": "src/"
+    }
+  }
+}
